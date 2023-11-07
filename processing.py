@@ -15,9 +15,9 @@ import shutil
 import yaml
 
 
-RDD_dataset_path = r'D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\Datasets\RDD2022\RDD2022' # Path to RDD2022 dataset as described in github
-pothole_dataset_path = r'D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\Datasets\An Annotated Water-Filled, and Dry Potholes Dataset for Deep Learning Applications' # Path to Pothole dataset as described in github
-final_dataset_path = r"D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\Datasets" # Specify the path of where you want the final combined dataset (RDD + pothole) to be saved in
+RDD_dataset_path = '' # Path to RDD2022 dataset as described in github
+pothole_dataset_path = '' # Path to Pothole dataset as described in github
+final_dataset_path = '' # Specify the path of where you want the final combined dataset (RDD + pothole) to be saved in
 
 all_classes = ['D00', 'D01', 'D10', 'D11', 'D20', 'D40', 'D43', 'D44']
 remove_labels = ['D40', 'D43', 'D44']
