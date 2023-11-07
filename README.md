@@ -1,5 +1,9 @@
 # Modified-RDD2022-Dataset
-This code will apply some modifications on the RDD2022 dataset avaliable at this [link], and combine it with a pothole dataset avaliable at this [link].
+This code will apply some modifications on the RDD2022 dataset avaliable at this [link](https://doi.org/10.48550/arXiv.2209.08538), and combine it with a pothole dataset avaliable at this [link](https://doi.org/10.1016/j.dib.2023.109206).
+
+
+
+
 
 # The original RDD2022 dataset comes with 8 classes as follow:
 * D00: Wheel mark part (Longitudinal) [Linear Crack]
@@ -12,7 +16,7 @@ This code will apply some modifications on the RDD2022 dataset avaliable at this
 * D44: White line blur (Other Corruption)
 
 
-# The modification that will be done to the RDD2022 includes:
+# The modification that will be done to the RDD2022 dataset includes:
 - Changing the following classes: [D00, D01, D10, D11] into a single class "Linear-Crack"
 - Keeping the D20 class as "Alligator-Cracl"
 - Removing the following classes: [D40, D43, D44]
@@ -24,17 +28,17 @@ This code will apply some modifications on the RDD2022 dataset avaliable at this
 - class (1): Alligator-Crack: 10617 objects
 - class (2): pothole: 1156 objects
 
-## Class distribution in train split:
+### Class distribution in train split:
 - Linear-Crack: 26750 objects
 - Alligator-Crack: 7419 objects
 - pothole: 824 objects
 
-## Class distribution in valid split:
+### Class distribution in valid split:
 - Linear-Crack: 3788 objects
 - Alligator-Crack: 1073 objects
 - pothole: 107 objects
 
-## Class distribution in test split:
+### Class distribution in test split:
 - Linear-Crack: 7532 objects
 - Alligator-Crack: 2125 objects
 - pothole: 225 objects
