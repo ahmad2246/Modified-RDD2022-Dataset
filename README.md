@@ -18,7 +18,7 @@ This code will apply some modifications on the RDD2022 dataset avaliable at this
 
 # The modification that will be done to the RDD2022 dataset includes:
 - Changing the following classes: [D00, D01, D10, D11] into a single class "Linear-Crack"
-- Keeping the D20 class as "Alligator-Cracl"
+- Keeping the D20 class as "Alligator-Crack"
 - Removing the following classes: [D40, D43, D44]
 - Combining the "pothole" dataset with the modified RDD2022 dataset
 
