@@ -45,9 +45,13 @@ This code will apply some modifications on the RDD2022 dataset avaliable at this
 
 # Run the code
 To run the code, you need to follow these steps:
-1- specify the path to RDD2022 dataset **"RDD_dataset_path"**
-2- specify the path to pothole dataset **"pothole_dataset_path"**
-3- specify where you want the combined dataset to be created **"final_dataset_path"**
-4- Run the code 
+1) download RDD2022 dataset from this link
+2) download pothole dataset from this link
+3) download the processing.py file 
+4) in the processing.py file:
+	* specify the path to RDD2022 dataset **"RDD_dataset_path"**
+	* specify the path to pothole dataset **"pothole_dataset_path"**
+	* specify where you want the combined dataset to be created **"final_dataset_path"**
+5) Run the code 
 
 Note: The code might take upto 45 minutes to finish.
