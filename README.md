@@ -1,11 +1,12 @@
 # Modified-RDD2022-Dataset
-This code will apply some modifications on the RDD2022 dataset avaliable at this [link](https://doi.org/10.48550/arXiv.2209.08538), and combine it with a pothole dataset avaliable at this [link](https://doi.org/10.1016/j.dib.2023.109206).
+This code is designed to apply several modifications to the RDD2022 dataset, which is available at this [link](https://doi.org/10.48550/arXiv.2209.08538), and combine it with a pothole dataset, accessible at this [link](https://doi.org/10.1016/j.dib.2023.109206).
 
 
 
 
 
-# The original RDD2022 dataset comes with 8 classes as follow:
+# Original RDD2022 Dataset
+The original RDD2022 dataset comprises eight classes, including:
 * D00: Wheel mark part (Longitudinal) [Linear Crack]
 * D01: Construction joint part (Longitudinal) [Linear Crack]
 * D10: Equal interval (Lateral) [Linear Crack]
@@ -16,42 +17,38 @@ This code will apply some modifications on the RDD2022 dataset avaliable at this
 * D44: White line blur (Other Corruption)
 
 
-# The modification that will be done to the RDD2022 dataset includes:
+# Modifications to RDD2022 Dataset
+The modifications applied to the RDD2022 dataset are as follows:
 - Changing the following classes: [D00, D01, D10, D11] into a single class "Linear-Crack"
 - Keeping the D20 class as "Alligator-Crack"
 - Removing the following classes: [D40, D43, D44]
 - Combining the "pothole" dataset with the modified RDD2022 dataset
 
-# After running the code, the output is a new dataset with the following distribution:
 
-- class (0): Linear-Crack: 38070 objects
-- class (1): Alligator-Crack: 10617 objects
-- class (2): pothole: 1156 objects
+# Additional Functions
+Apart from the modifications, this code also performs the following tasks:
+- Checks if each label file in each dataset has a corresponding image
+- Converts annotations from ".xml" to ".txt"
+- Performs undersampling of the majority classes to create a balanced dataset based on class objects
+- Splits the dataset into train/valid/test sets with a ratio of 0.7/0.1/0.2 while maintaining a balanced split based on class objects
+- Plots the class distribution after generating the desired dataset
 
-### Class distribution in train split:
-- Linear-Crack: 26750 objects
-- Alligator-Crack: 7419 objects
-- pothole: 824 objects
 
-### Class distribution in valid split:
-- Linear-Crack: 3788 objects
-- Alligator-Crack: 1073 objects
-- pothole: 107 objects
-
-### Class distribution in test split:
-- Linear-Crack: 7532 objects
-- Alligator-Crack: 2125 objects
-- pothole: 225 objects
-
-# Run the code
-To run the code, you need to follow these steps:
-1) download RDD2022 dataset from this [link](https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547?file=38030910).
-2) download pothole dataset from this [link](https://data.mendeley.com/datasets/tp95cdvgm8/1).
-3) download the processing.py file.
-4) in the processing.py file:
-	* specify the path to RDD2022 dataset **"RDD_dataset_path"**.
-	* specify the path to pothole dataset **"pothole_dataset_path"**.
-	* specify where you want the combined dataset to be created **"final_dataset_path"**.
+# Running the Code
+To run the code, follow these steps:
+1) Download the RDD2022 dataset from this [link](https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547?file=38030910).
+2) Download the pothole dataset from this [link](https://data.mendeley.com/datasets/tp95cdvgm8/1).
+3) Extract the datasets:
+	* Extract the pothole dataset.
+	* Extract the RDD2022 dataset (including the country datasets folders inside it).
+3) Download the processing.py file.
+4) In the processing.py file:
+	* Specify the path to the RDD2022 dataset using the variable **"RDD_dataset_path"**.
+	* Specify the path to the pothole dataset using the variable **"pothole_dataset_path"**.
 5) Run the code 
 
-**Note**: The execution time of the code might reach 45 minutes.
+**Note**: The execution time of the code may be up to 30 minutes.
+
+
+
+
