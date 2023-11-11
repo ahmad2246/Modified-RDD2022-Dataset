@@ -4,7 +4,6 @@ Created on Tue Oct 31 09:08:55 2023
 
 @author: ahmad
 """
-
 import cv2
 import os
 import imgaug.augmenters as iaa
@@ -13,7 +12,7 @@ import yaml
 
 
 # You just need to specify the train dataset folder path:
-train_folder = r"" # Path to train dataset folder path
+train_folder = r"D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\datasets\RDD2022\combined_RDD_dataset\things123\train" # Path to train dataset folder path
 
 images_folder = os.path.join(train_folder, 'images')
 labels_folder =  os.path.join(train_folder, 'labels')
@@ -27,7 +26,15 @@ def apply_augmentation(images_folder):
     
     os.makedirs(augmented_images_folder, exist_ok=True)
     
-    for image_file in os.listdir(images_folder):
+    
+    num_images = len(os.listdir(images_folder))
+    
+    print('Applying augmnetation to images')
+    for i, image_file in enumerate(os.listdir(images_folder)):
+        print(f"...", end='\r')
+        
+        print("", end=f"\rPercentComplete: {100*i/num_images} %")
+        
         image_path = os.path.join(images_folder, image_file)
         
         image = cv2.imread(image_path)
@@ -45,7 +52,6 @@ def apply_augmentation(images_folder):
         # Save the augmented image with the same name as the original
         output_image_path = os.path.join(augmented_images_folder, image_file)
         cv2.imwrite(output_image_path, augmented_image)
-
 
 
 
