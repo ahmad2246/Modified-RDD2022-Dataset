@@ -16,8 +16,8 @@ import yaml
 import numpy as np
 
 
-RDD_dataset_path = r'D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\new_datasets\RDD2022' # Path to RDD2022 dataset as described in github
-pothole_dataset_path = r'D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\new_datasets\An Annotated Water-Filled, and Dry Potholes Dataset for Deep Learning Applications' # Path to Pothole dataset as described in github
+RDD_dataset_path = r'' # Path to RDD2022 dataset as described in github
+pothole_dataset_path = r'' # Path to Pothole dataset as described in github
 
 all_classes = ['D00', 'D01', 'D10', 'D11', 'D20', 'D40', 'D43', 'D44']
 remove_labels = ['D40', 'D43', 'D44']

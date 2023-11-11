@@ -41,11 +41,19 @@ To run the code, follow these steps:
 3) Extract the datasets:
 	* Extract the pothole dataset.
 	* Extract the RDD2022 dataset (including the country datasets folders inside it).
-3) Download the processing.py file.
+3) Download the **preprocessing.py** file.
 4) In the processing.py file:
 	* Specify the path to the RDD2022 dataset using the variable **"RDD_dataset_path"**.
 	* Specify the path to the pothole dataset using the variable **"pothole_dataset_path"**.
 5) Run the code 
+
+# Apply Augmnetation
+To apply augmentation to generated dataset follow these steps:
+1) Run the preprocessing.py file as explained earlier **if you didn't run it beofre**.
+2) Download the **augmentation.py** file.
+3) In the **augmentation.py** file: Specify the path to the **'train'** folder - of the dataset you generated earlier - using the variable **"train_folder"**.
+4) Run the code.
+5) Now you have a new folder called **"augmented_train"** and the **"data.yaml"** file will point toward this folder as the folder used for training.
 
 **Note**: The execution time of the code may be up to 30 minutes.
 
