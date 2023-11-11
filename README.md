@@ -39,8 +39,8 @@ Apart from the modifications, this code also performs the following tasks:
 In general, there are two main sccipts for combining RDD2022 dataset with a pothole dataset [**preprocessing_1.py** and **preprocessing_2.py**]. 
 
 
-[1] **preprocessing_1.py** is used to combine **RDD2022 dataset** with the **samll pothole dataset**.
-[2] **preprocessing_2.py** is used to combine **RDD2022 dataset** with the **big pothole dataset**.
+1- **preprocessing_1.py** is used to combine **RDD2022 dataset** with the **samll pothole dataset**.
+2- **preprocessing_2.py** is used to combine **RDD2022 dataset** with the **big pothole dataset**.
 
 To run anyone of these scripts, follow these steps:
 
