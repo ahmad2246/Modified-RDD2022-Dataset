@@ -1,8 +1,9 @@
 # Modified-RDD2022-Dataset
-This code is designed to apply several modifications to the RDD2022 dataset, which is available at this [link](https://doi.org/10.48550/arXiv.2209.08538), and combine it with a pothole dataset, accessible at this [link](https://doi.org/10.1016/j.dib.2023.109206).
+This code is designed to apply several modifications to the RDD2022 dataset, and combine it with one of two avaliable pothole datasets.
 
-
-
+* The RDD2022 dataset: available at this [link](https://doi.org/10.48550/arXiv.2209.08538) and can be downloaded from this [link](https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547?file=38030910)
+* The first pothole dataset (small pothole dataset): avaliable at this [link](https://www.sciencedirect.com/science/article/pii/S2352340923003256?via%3Dihub) and can be downloaded from this [link](https://data.mendeley.com/datasets/tp95cdvgm8/1).
+* The second pothole dataset (big pothole dataset): avaliable at this [link](https://learnopencv.com/train-yolov8-on-custom-dataset/) and can be downloaded from this [link](https://www.dropbox.com/s/qvglw8pqo16769f/pothole_dataset_v8.zip?dl=1).
 
 
 # Original RDD2022 Dataset
@@ -35,21 +36,28 @@ Apart from the modifications, this code also performs the following tasks:
 
 
 # Running the Code
-To run the code, follow these steps:
-1) Download the RDD2022 dataset from this [link](https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547?file=38030910).
-2) Download the pothole dataset from this [link](https://data.mendeley.com/datasets/tp95cdvgm8/1).
-3) Extract the datasets:
-	* Extract the pothole dataset.
-	* Extract the RDD2022 dataset (including the country datasets folders inside it).
-3) Download the **preprocessing.py** file.
-4) In the processing.py file:
+In general, there are two main sccipts for combining RDD2022 dataset with a pothole dataset [**preprocessing_1.py** and **preprocessing_2.py**]. 
+
+
+[1] **preprocessing_1.py** is used to combine **RDD2022 dataset** with the **samll pothole dataset**.
+[2] **preprocessing_2.py** is used to combine **RDD2022 dataset** with the **big pothole dataset**.
+
+To run anyone of these scripts, follow these steps:
+
+1) Download and extract the RDD2022 dataset
+2) Download and extract the desired pothole dataset 
+3) Download **preprocessing_1.py** or **preprocessing_2.py** file (depending on which pothole dataset you want to combine).
+4) In the **preprocessing_1.py** or **preprocessing_2.py** file (depending on which pothole dataset you want to combine):
 	* Specify the path to the RDD2022 dataset using the variable **"RDD_dataset_path"**.
 	* Specify the path to the pothole dataset using the variable **"pothole_dataset_path"**.
 5) Run the code 
+6) if you choose:
+	* the small pothole dataset: then your final combined dataset will be called "combined_RDD_dataset" and it will be located inside the "RDD2022" dataset folder.
+	* the big pothole dataset: then your final combined dataset will be called "new_combined_RDD_dataset" and it will be located inside the "RDD2022" dataset folder.
 
 # Apply Augmnetation
 To apply augmentation to generated dataset follow these steps:
-1) Run the preprocessing.py file as explained earlier **if you didn't run it beofre**.
+1) Run the**preprocessing_1.py** or **preprocessing_2.py** file (depending on which pothole dataset you want to combine) as explained earlier **only if you didn't run it beofre**.
 2) Download the **augmentation.py** file.
 3) In the **augmentation.py** file: Specify the path to the **'train'** folder - of the dataset you generated earlier - using the variable **"train_folder"**.
 4) Run the code.
