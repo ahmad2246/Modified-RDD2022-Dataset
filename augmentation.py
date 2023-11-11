@@ -12,7 +12,7 @@ import yaml
 
 
 # You just need to specify the train dataset folder path:
-train_folder = r"D:\Ahmad\Work\KFUPM\Term 231\Senior Project\Computer Vision\datasets\RDD2022\combined_RDD_dataset\things123\train" # Path to train dataset folder path
+train_folder = r"" # Path to train dataset folder path
 
 images_folder = os.path.join(train_folder, 'images')
 labels_folder =  os.path.join(train_folder, 'labels')
@@ -23,20 +23,14 @@ def apply_augmentation(images_folder):
     
     dataset_folder = os.path.dirname(os.path.dirname(images_folder))
     augmented_images_folder = os.path.join(dataset_folder, "augmented_train", "images")
-    
     os.makedirs(augmented_images_folder, exist_ok=True)
     
     
     num_images = len(os.listdir(images_folder))
-    
-    print('Applying augmnetation to images')
     for i, image_file in enumerate(os.listdir(images_folder)):
-        print(f"...", end='\r')
-        
-        print("", end=f"\rPercentComplete: {100*i/num_images} %")
+        print("", end=f"\rApplying augmnetation to images: {(100*i/num_images):.2f} %")
         
         image_path = os.path.join(images_folder, image_file)
-        
         image = cv2.imread(image_path)
         
         # Define an augmentation sequence (including brightness, contrast, and hue adjustments)
@@ -56,13 +50,14 @@ def apply_augmentation(images_folder):
 
 
 def copy_labels(labels_folder):
+    print("Copying labels...")
     dataset_folder = os.path.dirname(os.path.dirname(labels_folder))
     copied_labels_folder = os.path.join(dataset_folder, "augmented_train", "labels")
     shutil.copytree(labels_folder, copied_labels_folder)
     
 
 def modify_yaml(train_folder):
-    
+    print("Modifiying data.yaml...")
     dataset_folder = os.path.dirname(train_folder)
     yaml_path = os.path.join(dataset_folder, 'data.yaml')
     
@@ -80,5 +75,5 @@ apply_augmentation(images_folder)
 copy_labels(labels_folder)
 modify_yaml(train_folder)
  
-print("'augmented_train' folder has been created successfully!\n")
+print("\n\n'augmented_train' folder has been created successfully!\n")
 print("'data.yaml' file is now pointing for 'augmented_train' folder\n")
